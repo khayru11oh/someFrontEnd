@@ -1,0 +1,83 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24px;
+}
+
+:root {
+    --background-color: rgba(0 , 0, 0, 0.75);
+}
+
+@font-face {
+    font-family: 'MyFont';
+    font-style: normal;
+    src: url('./sources/Crashnumberingserif-KVjW.ttf');
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    background: linear-gradient(to right, #96a7af, #2a6d94);
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.display {
+    background-color: var(--background-color);
+    border-radius: 20px 20px 5px 5px;
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 10px;
+    color: rgba(255 , 255, 255, 0.8);
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.display .previous {
+    font-family: 'MyFont', sans-serif;
+    color: rgba(255 , 255, 255, 0.65);
+    font-size: 1.3rem;
+}
+
+.display .current {
+    font-family: 'MyFont', sans-serif;
+    color: rgba(255 , 255, 255);
+    font-size: 1.5rem;
+}
+
+[class~=calc_grid] {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    /* column-gap: 5px;
+    row-gap: 5px; */
+    gap: 5px;
+}
+
+.calc_grid > button {
+    cursor: pointer;
+    font-size: 1.6rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255, 255, 255, .75);
+    border-radius: 10px;
+}
+
+.calc_grid > button:hover {
+    background-color: rgba(255 , 255, 255, 0.9);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
